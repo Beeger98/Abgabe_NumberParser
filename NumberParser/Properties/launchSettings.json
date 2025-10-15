@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NumberParser": {
+      "commandName": "Project",
+      "commandLineArgs": "./numbers.txt"
+    }
+  }
+}
