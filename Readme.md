@@ -73,8 +73,10 @@ Main entry point (Program.cs) configures and runs the pipeline:
 - `UnknownDetectedCharacter = 'X'`
 
 ### Character detection
-
+`FileParser` The Chunks returned are configurable height
 `FourLinesCharacters` provides a simple dictionary-based matcher for digits 1–5, represented as exact multi-line strings. You can replace this strategy (e.g., with fuzzy or pattern-based matching) by supplying your own `ParserConfiguration.DetectionAlgorithm`.
+
+ 
 
 ## Getting started
 
@@ -99,7 +101,7 @@ dotnet build
 ```
 Notes:
 - The app reads from `parameter.txt` at runtime.
-- `parameter.txt` is configured to be copied to the output folder on build.
+
 
 ---
 
@@ -108,7 +110,6 @@ Notes:
 - Fixed height: 4 lines per “row” of digits (configurable via `LineHeight`).
 - Each character is an ASCII glyph inside a box of width ≥ 1 columns.
 - Separation: ensure at least one completely blank column between digits so the segmenter can split them.
-- Trailing spaces matter for exact matching in the reference detector.
 
 ### Supported digits (1–5)
 
@@ -153,7 +154,7 @@ Current known glyphs (exactly as matched):
     |
 ____|
 ```
-
+More Digits can be teached by adding new Numbers into KnownChars in FourLinesCharacters.cs
 ### Example
 
 A minimal `numbers.txt` containing a single “row” of 1–5 (ensure at least one blank column between characters):
